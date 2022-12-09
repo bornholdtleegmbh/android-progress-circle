@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="">
+
+    <de.bornholdtlee.progress_circle.view.ProgressCircleView
+        android:id="@+id/progress_circle_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:pcv_isRound="true"
+        app:pcv_colorProgress="@android:color/holo_green_dark"
+        app:pcv_colorBackground="@android:color/darker_gray"
+        app:pcv_strokeWidth="8" />
+
+    <Button
+        android:id="@+id/button_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress" />
+
+</LinearLayout>

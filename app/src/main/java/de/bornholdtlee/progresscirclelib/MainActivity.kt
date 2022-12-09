@@ -2,39 +2,25 @@ package de.bornholdtlee.progresscirclelib
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import de.bornholdtlee.progresscirclelib.ui.theme.ProgressCircleLibTheme
+import de.bornholdtlee.progress_circle.view.ProgressCircleView
+import de.bornholdtlee.progresscirclelib.databinding.ActivityMainBinding
+import de.bornholdtlee.progresscirclelib.databinding.ActivityMainBinding.inflate
+import de.bornholdtlee.progresscirclelib.utils.viewBinding
 
 class MainActivity : ComponentActivity() {
+
+    private val binding by viewBinding(ActivityMainBinding::inflate)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ProgressCircleLibTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
-            }
-        }
+        setContentView(binding.root)
+
+        setClickListeners()
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ProgressCircleLibTheme {
-        Greeting("Android")
+    private fun setClickListeners() {
+        binding.buttonProgress.setOnClickListener {
+            binding.progressCircleView.setProgressWithAnimation(50f)
+        }
     }
 }

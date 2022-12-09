@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
@@ -8,10 +9,8 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "de.bornholdtlee.progress_circle"
         minSdk 26
         targetSdk 33
-        versionCode 1
         versionName "1.0"
     }
 
@@ -21,10 +20,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = '11'
     }
