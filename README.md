@@ -25,3 +25,24 @@ This library is providing the progress circle as a Composable and XML-View.
     app:pcv_strokeWidthProgress="8" />
 ```
 If you don't want to draw a background circle behind the progress indicator, just pass `@android:color/transparent` to the `app:pcv_colorBackground` paremter in your XML.
+
+Set the progress:
+```kotlin
+binding.progressCircleView.progress = 20f
+```
+
+Set the progress with animation:
+```kotlin
+
+binding.progressCircleView.setProgressWithAnimation(progress = 20f)
+
+// or fully specified
+
+binding.progressCircleView.setProgressWithAnimation(
+    progress = 20f,
+    animationDuration = 2000L,
+    animationInterpolator = OvershootInterpolator(1f)
+) { newProgress ->
+    // React to animation completed event
+}
+```
