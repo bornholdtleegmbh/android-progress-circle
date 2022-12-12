@@ -4,21 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="">
+    android:padding="16dp">
 
     <de.bornholdtlee.progress_circle.view.ProgressCircleView
         android:id="@+id/progress_circle_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:pcv_isRound="true"
-        app:pcv_colorProgress="@android:color/holo_green_dark"
-        app:pcv_colorBackground="@android:color/darker_gray"
-        app:pcv_strokeWidth="8" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:pcv_colorBackground="@color/primaryVariant"
+        app:pcv_colorProgress="@color/primary"
+        app:pcv_strokeWidthBackground="24"
+        app:pcv_strokeWidthProgress="18"/>
 
     <Button
-        android:id="@+id/button_progress"
+        android:id="@+id/button_progress_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Progress" />
+        android:text="Progress +" />
+
+    <Button
+        android:id="@+id/button_progress_substract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progress -" />
 
 </LinearLayout>

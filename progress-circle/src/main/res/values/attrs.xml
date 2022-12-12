@@ -2,10 +2,11 @@
 <resources>
 
     <declare-styleable name="ProgressCircleView">
-        <attr name="pcv_isRound" format="boolean" />
-        <attr name="pcv_strokeWidth" format="float" />
+        <attr name="pcv_strokeWidthProgress" format="float" />
+        <attr name="pcv_strokeWidthBackground" format="float" />
         <attr name="pcv_colorProgress" format="color" />
         <attr name="pcv_colorBackground" format="color" />
+        <attr name="pcv_progress" format="float" />
     </declare-styleable>
 
 </resources>

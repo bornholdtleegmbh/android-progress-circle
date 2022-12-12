@@ -1,10 +1,9 @@
 package de.bornholdtlee.progresscirclelib
 
 import android.os.Bundle
+import android.view.animation.OvershootInterpolator
 import androidx.activity.ComponentActivity
-import de.bornholdtlee.progress_circle.view.ProgressCircleView
 import de.bornholdtlee.progresscirclelib.databinding.ActivityMainBinding
-import de.bornholdtlee.progresscirclelib.databinding.ActivityMainBinding.inflate
 import de.bornholdtlee.progresscirclelib.utils.viewBinding
 
 class MainActivity : ComponentActivity() {
@@ -19,8 +18,17 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setClickListeners() {
-        binding.buttonProgress.setOnClickListener {
-            binding.progressCircleView.setProgressWithAnimation(50f)
+        binding.buttonProgressAdd.setOnClickListener {
+            binding.progressCircleView.setProgressWithAnimation(
+                progress = binding.progressCircleView.progress + 20f,
+                animationInterpolator = OvershootInterpolator(1f)
+            )
+        }
+        binding.buttonProgressSubstract.setOnClickListener {
+            binding.progressCircleView.setProgressWithAnimation(
+                progress = binding.progressCircleView.progress - 20f,
+                animationInterpolator = OvershootInterpolator(1f)
+            )
         }
     }
 }
