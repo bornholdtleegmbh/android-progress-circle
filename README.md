@@ -6,8 +6,7 @@
 
 This library is providing the progress circle as a Composable and XML-View.
 
-### Look
-...
+![Demo GIF](demo.gif)
 
 ### How to use (Compose)
 
