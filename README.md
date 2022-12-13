@@ -4,9 +4,7 @@
 ![License](https://img.shields.io/github/license/bornholdtleegmbh/android-progress-circle?color=%230087ff&style=for-the-badge)
 ![Language](https://img.shields.io/github/languages/top/bornholdtleegmbh/android-progress-circle?color=%23875dff&style=for-the-badge)
 
-This library is providing the progress circle as a Composable and XML-View.
-
-![Demo GIF](demo.gif)
+<img src="demo.gif" alt="demo" width="300"/>
 
 ### How to use (Compose)
 
@@ -80,5 +78,24 @@ binding.progressCircleView.setProgressWithAnimation(
     animationInterpolator = OvershootInterpolator(1f)
 ) { newProgress ->
     // React to animation completed event
+}
+```
+
+## Installation
+
+Add it in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+Add the dependency to your module level build.gradle:
+```gradle
+dependencies {
+  implementation 'com.github.bornholdtleegmbh:android-progress-circle:1.1.0'
 }
 ```
