@@ -11,7 +11,6 @@
         android:id="@+id/progress_circle_view"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:visibility="gone"
         app:pcv_colorBackground="@color/primaryVariant"
         app:pcv_colorProgress="@color/primary"
         app:pcv_progress="30"
@@ -22,7 +21,6 @@
         android:id="@+id/button_progress_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_marginTop="16dp"
         android:text="Progress +" />
 
@@ -30,7 +28,6 @@
         android:id="@+id/button_progress_substract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:text="Progress -" />
 
     <androidx.compose.ui.platform.ComposeView

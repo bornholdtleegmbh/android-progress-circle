@@ -1,13 +1,9 @@
 package de.bornholdtlee.progresscirclelib
 
 import android.os.Bundle
-import android.util.Log
 import android.view.animation.OvershootInterpolator
-import android.widget.Space
 import androidx.activity.ComponentActivity
-import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import de.bornholdtlee.progress_circle.compose.CircleSpec
@@ -38,7 +33,7 @@ class MainActivity : ComponentActivity() {
             MainActivityComposePart()
         }
 
-        // setClickListeners()
+        setClickListeners()
     }
 
     private fun setClickListeners() {
@@ -72,6 +67,19 @@ private fun MainActivityComposePart() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
+        ProgressCircle(
+            modifier = Modifier.size(100.dp),
+            progress = progress,
+            progressCircleSpec = CircleSpec(
+                color = colorResource(id = R.color.primary),
+                width = 12.dp
+            ),
+            backgroundCircleSpec = CircleSpec(
+                color = colorResource(id = R.color.primaryVariant),
+                width = 14.dp
+            )
+        )
+
         ProgressCircleAnimated(
             modifier = Modifier.size(100.dp),
             progress = progress,
@@ -85,48 +93,6 @@ private fun MainActivityComposePart() {
             ),
             animationSpec = tween(
                 durationMillis = 500
-            ),
-            onAnimationFinished = { progress ->
-                // React to animation completed event
-            }
-        )
-
-        Spacer(modifier = Modifier.size(20.dp))
-
-        ProgressCircleAnimated(
-            modifier = Modifier.size(100.dp),
-            progress = progress,
-            progressCircleSpec = CircleSpec(
-                color = colorResource(id = R.color.primary),
-                width = 8.dp
-            ),
-            backgroundCircleSpec = CircleSpec(
-                color = colorResource(id = R.color.primaryVariant),
-                width = 16.dp
-            ),
-            animationSpec = tween(
-                durationMillis = 2000
-            ),
-            onAnimationFinished = { progress ->
-                // React to animation completed event
-            }
-        )
-
-        Spacer(modifier = Modifier.size(20.dp))
-
-        ProgressCircleAnimated(
-            modifier = Modifier.size(100.dp),
-            progress = progress,
-            progressCircleSpec = CircleSpec(
-                color = colorResource(id = R.color.primary),
-                width = 12.dp
-            ),
-            backgroundCircleSpec = CircleSpec(
-                color = colorResource(id = R.color.primaryVariant),
-                width = 8.dp
-            ),
-            animationSpec = tween(
-                durationMillis = 1000
             ),
             onAnimationFinished = { progress ->
                 // React to animation completed event
