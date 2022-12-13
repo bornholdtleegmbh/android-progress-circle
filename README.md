@@ -10,7 +10,44 @@ This library is providing the progress circle as a Composable and XML-View.
 ...
 
 ### How to use (Compose)
-...
+
+```kotlin
+ProgressCircle(
+    modifier = Modifier.size(150.dp),
+    progress = progress,
+    progressCircleSpec = CircleSpec(
+        color = Color.Green,
+        width = 12.dp
+    ),
+    backgroundCircleSpec = CircleSpec(
+        color = Color.Green.copy(alpha = 0.2f),
+        width = 12.dp
+    )
+)
+
+// or with animation
+
+ProgressCircleAnimated(
+    modifier = Modifier.size(150.dp),
+    progress = progress,
+    progressCircleSpec = CircleSpec(
+        color = Color.Green,
+        width = 12.dp
+    ),
+    backgroundCircleSpec = CircleSpec(
+        color = Color.Green.copy(alpha = 0.2f),
+        width = 12.dp
+    ),
+    animationSpec = tween(
+        durationMillis = 500
+    ),
+    onAnimationFinished = { progress ->
+        // React to animation completed event
+    }
+)
+```
+
+The animation itself is performed inside of the `ProgressCircleAnimated` Composable. You just need to pass the target value of `progress`.
 
 ### How to use (XML)
 ```xml
