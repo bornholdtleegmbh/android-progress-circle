@@ -96,6 +96,6 @@ allprojects {
 Add the dependency to your module level build.gradle:
 ```gradle
 dependencies {
-  implementation 'com.github.bornholdtleegmbh:response-evaluator:1.2.1'
+  implementation 'com.github.bornholdtleegmbh:android-progress-circle:1.1.0'
 }
 ```
