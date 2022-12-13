@@ -4,9 +4,6 @@
 ![License](https://img.shields.io/github/license/bornholdtleegmbh/android-progress-circle?color=%230087ff&style=for-the-badge)
 ![Language](https://img.shields.io/github/languages/top/bornholdtleegmbh/android-progress-circle?color=%23875dff&style=for-the-badge)
 
-This library is providing the progress circle as a Composable and XML-View.
-
-<br>
 <img src="demo.gif" alt="demo" width="300"/>
 
 ### How to use (Compose)
